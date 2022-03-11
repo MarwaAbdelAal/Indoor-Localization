@@ -6,22 +6,38 @@ representing the tracked moving object.
 - The user can replay the motion of the object during the last time period (corresponding to like
 50 time point).
 
-# requirements for Create flask APP
+# requirements for running the project
 
-## 1- Create virtual Enviironment 
+## 1- Get your own IP address by using cmd of your device and type 
+```
+ipconfig
+```
+or if you're using linux, open the terminal and type 
+``` 
+ifconfig 
+```
+
+- then make sure to change the existing IP in 'esp.ino', 'App.js' in both folders (reactapp) and (reactnative-app1) 
+
+- Make sure to change SSID and password in the arduino code.
+
+## 2- Create virtual Environment 
 
 ```
 pip install virtualenv
-virtualenv venv  
+virtualenv venv 
 ```
 
 #### PS Don't forget to activate your virtual environment
+```
+source venv/bin/activate
+```
 
 #### In case working with windows activation may fail so check next link
 
 [Activation](https://stackoverflow.com/questions/18713086/virtualenv-wont-activate-on-windows)
 
-## 2- Run main.py to run server 
+## 2- Run server.py to run server 
 
 > install requirements first : 
 > ```
@@ -29,7 +45,7 @@ virtualenv venv
 > ```
 
 ```
-python main.py
+python server.py
 ```
 ## 3- Make sure to be in reactapp directory and run following commands for the webapp
 
@@ -48,7 +64,9 @@ npm start
 ## Testing APIS
 1- visit http://localhost:8090/mapping to see location predicted from Random Forest Classifier
 
-2- visit http://localhost:8090/data?STUDBME1="RSSI_Value"&STUDBME2="RSSI_Value"&RehabLab="RSSI_Value"&CMP_LAB1="RSSI_Value"&CMP_LAB2="RSSI_Value"&CMP_LAB3="RSSI_Value"&CMP_LAB4="RSSI_Value"&Dalia_iphone="RSSI_Value"&Dalialab="RSSI_Value"&Mikasa="RSSI_Value"&Nada="RSSI_Value"&YME="RSSI_Value"   to see location predicted from Random Forest Classifier
+### Snapshot of the mobile application
+![mobile_applaction_map](images/map.jpeg)
 
-> Snapshot of the mobile application
-> ![mobile_applaction_map](images/map.jpeg)
+### Snapshot for the reactapp existing in the hallwayTwo
+![reactapp_map](images/hallway2.png)
+* there is a tracking mode which saves the last 50 readings and show them in reverse.
